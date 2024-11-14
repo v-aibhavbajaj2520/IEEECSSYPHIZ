@@ -1,25 +1,27 @@
 import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import { IoMenu } from "react-icons/io5";
+import Link from 'next/link';
 
 export default function Home() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({delay: 1000})])
+  const [emblaRef1] = useEmblaCarousel({ loop: true }, [Autoplay({delay: 1500})])
   return (
-    <div>
+    <div >
       <section>
       <header className='shadow-md font-sans tracking-wide relative z-50'>
-    <section className='py-2 bg-orange-400 text-white text-right px-10'>
-      <p className='text-sm'><strong className="mx-3">Address:</strong>SWF New York 185669<strong className="mx-3">Contact
-          No:</strong>1800333665</p>
+    <section className='py-2 bg-orange-400 text-white text-right px-10 w-full'>
+      <p className='text-center'><strong>IEEE CSSYP HIGH IMPACT ZONAL GRAND FINALE</strong></p>
     </section>
   
     <div className="navbar bg-gray-800">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-5 w-5 bg-red-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor">
@@ -28,31 +30,60 @@ export default function Home() {
             strokeLinejoin="round"
             strokeWidth="2"
             d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
+        </svg> */}
+        <IoMenu className='text-white size-10 mr-10'/>
       </div>
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-auto p-2 shadow">
         <li><a>Home</a></li>
         <li>
-          <a>About</a>
+        <details>
+          <summary className="text-black">About</summary>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a href="http://ieee.org/about">IEEE</a></li>
+            <li><a href="https://www.computer.org/about"> IEEE Computer Society</a></li>
+            <li><a href="https://www.computer.org/volunteering/boards-and-committees/member-geographic-activities">IEEE CS MGAP</a></li>
+            <li><a href="https://www.computer.org/volunteering/boards-and-committees/syp">IEEE CSS SYP</a></li>
           </ul>
-        </li>
+        </details>
+      </li>
         <li>
-          <a>Membership</a>
+        <details>
+          <summary className="text-black">Membership</summary>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><a href="https://www.computer.org/membership">Discover Membership</a></li>
+            <li><a href="https://www.computer.org/membership/categories">Membership Conclusion</a></li>
+            <li><a href="https://www.computer.org/membership/faq">Membership FAQ</a></li>
+            
           </ul>
-        </li>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="text-black">Initiative</summary>
+          <ul className="p-2">
+            <li><a href="https://syp.computer.org/">Initiative</a></li>
+          </ul>
+        </details>
+      </li>
+      {/* Join Us Section */}
+      <li>
+        <details>
+          <summary className="text-black">Join Us</summary>
+          <ul className="p-2">
+            <li><a href="https://docs.google.com/forms/d/19yLmWAzQetJSfopXtZp-mcs1IpzqdLbKNuXtBELnyaY/viewform?edit_requested=true">Volunteer Form</a></li>
+            <li><a href="https://forms.gle/UWY9y7kwf8FijZZE7">Call for Sponsors Form</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdcHGceG_SWV8tiXlec0vc3BoFi07JvxFnH8cTJ5LAGB-qj2Q/viewform">Call for Host Form</a></li>
+          </ul>
+
+        </details>
+      </li>
+      <li><a href="https://www.computer.org/publications/tech-news/events/syp-volunteers">Get Involved</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">
-      <img src="https://syp.computer.org/wp-content/uploads/2021/04/CS_SYP_Logo-white-300x58.png" alt="" />
-    </a>
+
+      <img className='' src="https://syp.computer.org/wp-content/uploads/2021/04/CS_SYP_Logo-white-300x58.png"  alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -71,18 +102,36 @@ export default function Home() {
       <li>
         <details>
           <summary className="text-white">Membership</summary>
-          <ul className="p-2">
+          <ul className="p-2 w-56">
             <li><a href="https://www.computer.org/membership">Discover Membership</a></li>
             <li><a href="https://www.computer.org/membership/categories">Membership Conclusion</a></li>
             <li><a href="https://www.computer.org/membership/faq">Membership FAQ</a></li>
-            <li><a href="https://syp.computer.org/">Initiative</a></li>
             <li><a href="https://www.computer.org/publications/tech-news/events/syp-volunteers">Get Involved</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <details>
+          <summary className="text-white">Initiative</summary>
+          <ul className="p-2">
+            <li><a href="https://syp.computer.org/">Initiative</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary className="text-white">Join Us</summary>
+          <ul className="p-2 w-52">
+          <li><a href="https://docs.google.com/forms/d/19yLmWAzQetJSfopXtZp-mcs1IpzqdLbKNuXtBELnyaY/viewform?edit_requested=true">Volunteer Form</a></li>
+            <li><a href="https://forms.gle/UWY9y7kwf8FijZZE7">Call for Sponsors Form</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdcHGceG_SWV8tiXlec0vc3BoFi07JvxFnH8cTJ5LAGB-qj2Q/viewform">Call for Host Form</a></li>
           </ul>
         </details>
       </li>
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end hidden sm:flex">
     <a className="btn">Register Now</a>
   </div>
 </div>
@@ -91,15 +140,16 @@ export default function Home() {
 
       <section>
       <div className="font-[sans-serif] bg-gray-800">
-      <div className="h-screen flex justify-center items-center opacity-50 bg-[url('https://lh3.googleusercontent.com/pw/AP1GczPOGNtHMBAMLxo8XHyRfVa6AfJvBotz2nUGUUvsAaAlhb1cNwgOX2b5mZve4hcNjQ-QC9yyK8An6O8bzx7cwARu5O7V0-bNZLB9JXR_KZyRV6sjGh-pkyC62zlL4iFN_MZXpah_QC-b0BhyknHHzh2K5A=w1311-h984-s-no-gm?authuser=0')]">
+      <div className="h-screen flex justify-center items-center bg-cover bg-opacity-30 bg-[url('https://www.imgtr.net/ib/GduEvvtBidQ2bGL_1731610954.jpg')]">
             <div className="opacity-100">
               <img src="https://www.imgtr.net/ib/MtxLn09N9sdjBQQ_1731435414.png" alt="hiz.png" />
             </div>
+            
       </div>
     </div>
       </section>
 {/* About IEEE CS SYP */}
-      <section>
+      <section className='sm:my-16 mt-16 mb-8'>
       <div className="font-sans bg-white p-4">
       <div className="md:max-w-5xl max-w-xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12">
@@ -112,7 +162,7 @@ export default function Home() {
           </div>
           <div className="max-h-72">
             {/* <img src="https://readymadeui.com/management-img.webp" alt="Placeholder Image" className="rounded-lg object-contain w-full h-full" /> */}
-            <div className="embla" ref={emblaRef}>
+            <div className="embla hidden sm:flex" ref={emblaRef1}>
                 <div className="embla__container">
                   <div className="embla__slide">
                     <img src="https://www.imgtr.net/ib/ZvBYVQ3wTm6fwcG_1731523565.jpg" alt="" />
@@ -160,7 +210,7 @@ export default function Home() {
 </section>
       </section> */}
 {/* About HIZ Events */}
-      <section>
+      <section className='my-14'>
       <div className="font-sans bg-gray-100 px-4 py-12">
       <div className="grid lg:grid-cols-2 gap-12 lg:max-w-6xl max-w-2xl mx-auto">
         <div>
@@ -299,7 +349,7 @@ export default function Home() {
       <section>
       <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
   <div className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
-    <div className="mx-auto aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30" ></div>
+    <div className="mx-auto w-auto bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30" ></div>
   </div>
   <div className="mx-auto max-w-4xl text-center">
     <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">Grab Your Tickets</p>
@@ -520,7 +570,7 @@ export default function Home() {
                 </ul>
             </div>
             <div className="z-10 relative h-full max-md:min-h-[350px]">
-                <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224328.3502894993!2d77.14718700429688!3d28.535797772413684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1731526866966!5m2!1sen!2sin"
                     className="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
                     ></iframe>
             </div>
